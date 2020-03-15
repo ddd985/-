@@ -1,0 +1,52 @@
+def charnum(path):
+    try:
+        num = 0
+        with open(path, "r") as f:
+          while(True):
+            line = f.read(1)
+            if not line:
+                break
+ 
+            num += 1
+        f.close()
+        print('文件字符数:',num)
+    except:
+        print('读取文件错误') 
+        f.close()
+def wordnum(path):
+    try:
+        tag = 1
+        with open(path, "r") as f:
+          while(True):
+            wo = f.read(1)
+            if not wo:
+                break
+            if ord(wo) not in (97,122) and ord(wo) not in (65,90)):
+                if tag == 1: 
+                    num+=1
+                    tag=0
+            elif:
+                tag=1
+        print('文件单词数:' ,num)
+    except: 
+        print('读取文件错误')
+def linenum(path):
+    try:
+        f = open(path, 'r')
+        num = len(f.readlines())
+        print('文件行数:',num)
+        f.close()
+    except: 
+        print('读取文件错误')
+        f.close()
+while(True):
+  print('-------------------')
+  print('欢迎使用文件处理系统')
+  print('请选择你要实现的功能')
+  print('c：统计文件字符数\nw：统计文件单词数\nl：统计文件行数\na：统计文件空行、代码行与注释行\no:退出\n')
+  choice = input()
+  if choice == 'o':
+      break
+  print('请输入文件名')
+  path= input()
+  switch(choice)
